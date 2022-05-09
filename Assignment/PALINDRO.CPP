@@ -2,22 +2,24 @@
 #include<conio.h>
 void main()
 {
+int n,back,num,rev=0;
 clrscr();
-int num,n1,n2,n3,res;
-printf("Enter 3 digit number");
-scanf("%d",&num);
-
-n1=num%10;
-num=num/10;
-
-n2=num%10;
-num=num/10;
-n3=num%10;
-
-if(n1==n3)
-printf("it is palindrome");
+printf("Enter the number:");
+scanf("%d",&n);
+back=n;
+for(;n>0;)
+{
+num=n%10;
+rev=rev*10+num;
+n=n/10;
+}
+if(back==rev)
+{
+printf("It is palindrome");
+}
 else
+{
 printf("it is not");
-
+}
 getch();
 }
